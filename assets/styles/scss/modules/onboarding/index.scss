@@ -1,0 +1,108 @@
+.onboarding {
+    @include flexGrid(column, flex-start, center, nowrap);
+    min-width: $phoneWidth;
+    min-height: 812px;
+    height: 100%;
+    background: linear-gradient(180deg, #ffffff 50%, rgba(255, 255, 255, 0.0001) 96.11%, rgba(255, 255, 255, 0.0001) 96.11%);
+}
+
+.onboarding__headline,
+.onboarding__description,
+.onboarding__btn-block {
+    display: none;
+}
+
+.onboarding__headline {
+    @include fontOptions (40, 40, $tabletWidth, $desktopWidth, $mainFont_sb, 700, 56, -0.012em, $textDecoration, $textTransform, $mainBlack);
+    width: 64%;
+    text-align: center;
+    margin: 0 0 0 0;
+}
+
+.onboarding__description {
+    @include fontOptions (14, 14, $tabletWidth, $desktopWidth, $mainFont, $fontWeight, 22, 0, $textDecoration, $textTransform, #606060);
+    justify-content: center;
+    text-align: center;
+    width: 37%;
+    margin: 7.36px 0 0 0;
+}
+
+
+.onboarding__btn-block {
+    width: 100%;
+    max-width: 498px;
+    margin: 35px 0 0 0;
+}
+
+.onboarding__join,
+.onboarding__learn {
+    width: 239px;
+    height: 50px;
+}
+.onboarding__join {
+    color: #ffffff;
+    background-color: $mainGreen;
+    &:hover,
+    &:active {
+        color: $mainGreen;
+        background-color: #ffffff;
+    }
+}
+.onboarding__learn {
+    color: $mainGreen;
+    background-color: #ffffff;
+    &:hover,
+    &:active {
+        color: #ffffff;
+        background-color: $mainGreen;
+    }
+}
+
+@media screen and (min-width: $tabletWidth + px) and (max-width: $tabletBreakPoint + px) {
+    .onboarding {
+        margin: 238px auto 0 auto;
+        min-height: 786px;
+    }
+
+    .onboarding__btn-block {
+        @include flexGrid(row, space-between, center, nowrap);
+    }
+
+    .onboarding__headline,
+    .onboarding__description,
+    .onboarding__btn-block {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: $desktopWidth + px) {
+    .onboarding {
+        align-items: flex-start;
+        background: none;
+        width: 90%;
+        min-height: 680px;
+        margin: 180px 0 0 5.5%;
+    }
+
+    .onboarding__headline,
+    .onboarding__description,
+    .onboarding__btn-block {
+        display: flex;
+    }
+
+    .onboarding__headline {
+        width: 40%;
+        max-width: 488px;
+    }
+
+    .onboarding__description {
+        width: 39%;
+        max-width: 505px;
+    }
+
+    .onboarding__btn-block {
+        @include flexGrid(row, space-between, center, nowrap);
+        margin: 40px 0 0 0;
+        padding-left: 1px;
+    }
+}
